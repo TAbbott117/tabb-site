@@ -7,10 +7,130 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+theme = "linkita"
+
+# The default language
+default_language = "en"
+
+# The default author for pages
+author = "tabbott"
+
+# The site title
+title = "TAbbott Site"
+
+# The site description
+description = "Personal site for Tyler Abbott"
+
+# Automatically generated feed 
+generate_feeds = true
+
+# The filenames to use for the feeds
+feed_filenames = ["atom.xml"] # or ["rss.xml"]
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = false
 
+[[taxonomies]]
+name = "tags"
+feed = true
+paginate_by = 5
+
+[[taxonomies]]
+name = "authors"
+feed = true
+paginate_by = 5
+
 [extra]
-theme = "linkita"
+math = false
+mermaid = false
+comment = false
+title_separator = " | "
+# page_info = ["date", "date_updated", "reading_time", "word_count", "authors"]
+
+[extra.style]
+bg_color = "#f4f4f5"
+bg_dark_color = "#18181b"
+header_blur = false
+header_color = "#e4e4e7"
+header_dark_color = "#27272a"
+
+[extra.profiles.your_username]
+avatar_url = "icons/github.svg"
+avatar_alt = ""
+avatar_invert = true
+# name = ""
+# bio = ""
+
+[[extra.profiles.your_username.social]]
+name = "github"
+url = "https://github.com/username"
+
+[[extra.profiles.your_username.social]]
+name = "bluesky"
+url = "https://bsky.app/profile/username"
+
+[[extra.profiles.your_username.social]]
+name = "rss"
+url = "$BASE_URL/atom.xml"
+
+[extra.profiles.your_username.open_graph]
+# image = ""
+# image_alt = ""
+first_name = "Your first name"
+last_name = "Your last name"
+username = "Your username"
+gender = "female" # or "male"
+
+[extra.profiles.your_username.open_graph.fediverse_creator]
+# Example for "@user@mastodon.social"
+handle = "user"
+domain = "mastodon.social"
+
+[extra.profiles.default_author.open_graph]
+fb_app_id = "Your fb app ID"
+fb_admins = ["YOUR_USER_ID"]
+# image = ""
+# image_alt = ""
+
+[[extra.menu]]
+url = "$BASE_URL/projects/"
+# name = "Projects"
+[extra.menu.names]
+en = "Projects"
+
+[[extra.menu]]
+url = "$BASE_URL/archive/"
+# name = "Archive"
+[extra.menu.names]
+en = "Archive"
+
+[[extra.menu]]
+url = "$BASE_URL/tags/"
+# name = "Tags"
+[extra.menu.names]
+en = "Tags"
+
+[[extra.menu]]
+url = "$BASE_URL/about/"
+# name = "About"
+[extra.menu.names]
+en = "About"
+
+[extra.footer]
+since = 2024
+license_name = "CC BY-SA 4.0"
+license_url = "https://creativecommons.org/licenses/by-sa/4.0/deed"
+# privacy_policy_url = "$BASE_URL/privacy-policy/"
+# terms_of_service_url = "$BASE_URL/terms-of-service/"
+# search_page_url = "$BASE_URL/search/"
+
+[extra.locales.en]
+locale = "en_US"
+date_format = "%x"
+date_format_archive = "%m-%d"
+
+[extra.goatcounter]
+endpoint = "https://MYCODE.goatcounter.com/count"
+src = "//gc.zgo.at/count.js"
